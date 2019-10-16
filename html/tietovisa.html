@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Tietokilpailu</title>
+    <style>
+        div#test {
+            border:#5AB029 3px solid;
+            padding:10px 20px 20px 40px;
+            background-color: rgb(214, 255, 225);
+            width: 65%;
+            height: 30%;
+            border-radius: 1%;
+
+        }
+    </style>
+    <script >
+        // pos is position of where the user in the test or which question they're up to
+        var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+        // this is a multidimensional array with 4 inner array elements with 5 elements inside them
+        // if you don't want answers viewable in the code, then you should use PHP and mySQL database
+        var questions = [
+            ["Mikä on Venezuelan valuutan nimi?", "Bolivari", "Dollivari", "Veneze", "A"],
+            ["Paljonko on 1 euro Vietnamin dongeina?", "500 000", "5 000", "50 000", "C"],
+            ["Mikä on Egyptin valuutan nimi?", "Dollari", "Kameli", "Punta", "C"],
+            ["1 baisa on ", "1/1000 Omanin rialia", "1/100 Omanin realia", "1/10 Omanin realia", "A"],
+            ["1. maailman sodan jälkeen hyperinflaation aikana Saksassa setelit käytettiin", "vessapaperina", "muistipaperina", "tapetteina", "C"],
+            ["Zimbabwen dollari ei ole enää olemassa, mutta kuinka iso oli arvokkain seteli ennen kuin omasta valuutasta luovutettiin?", "1 000 000 000", "100 000 000 000",
+                "10 000 000 000", "B"]
+        ];
+        // this get function is short for the getElementById function
+        function get(x){
+            return document.getElementById(x);
+        }
+        function renderQuestion(){
+            test = get("test");
+            if(pos >= questions.length){
+                test.innerHTML = "<h2 style='margin: auto;'>Sait oikein "+correct+" / "+questions.length+" kysymyksestä.</h2>";
+                get("test_status").innerHTML = "Tietovisa on päättynyt";
+                // resets the variable to allow users to restart the test
+                pos = 0;
+                correct = 0;
+                // stops rest of renderQuestion function running when test is completed
+                return false;
+            }
+            get("test_status").innerHTML = "Kysymys "+(pos+1)+" / "+questions.length;
+            question = questions[pos][0];
+            chA = questions[pos][1];
+            chB = questions[pos][2];
+            chC = questions[pos][3];
+
+            test.innerHTML = "<h3>"+question+"</h3>";
+
+            test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+
+
+            test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+
+
+            test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+
+
+            test.innerHTML += "<span class='fa fa-5x fa-long-arrow-right' id='vastaa' style='margin: auto'  onclick='checkAnswer()'></span>";
+
+        }
+        function checkAnswer(){
+
+            choices = document.getElementsByName("choices");
+            for(var i=0; i<choices.length; i++){
+                if(choices[i].checked){
+                    choice = choices[i].value;
+                }
+            }
+            // Tarkistaa onko tehtävä oikein
+            if(choice == questions[pos][4]){
+                //Oikea vastaus kasvattaa laskuria
+                correct++;
+
+
+
+            }
+
+            pos++;
+            renderQuestion();
+
+        }
+
+        window.addEventListener("load", renderQuestion, false);
+    </script>
+
+</head>
+
+<body>
+
+<header id="header">
+    <a href="index.html" class="logo"><span class="blinking" style="color: red">Rakkaudesta</span> rahaan</a>
+    <nav id="nav">
+        <a href="tietovisa.html">Tietovisa</a>
+        <a href="kilpailu2.html">Videokilpailu</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="kartta.html">Kassapalvelukartta</a>
+        <a href="apiapi.html">Valuuttamuunnin</a>
+        <a href="tekijat.html">Tekijät</a>
+        <a href="tarina.html">Tarina</a>
+    </nav>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-2x fa-bars"></span></a>
+
+<div class="banners">
+    <a href="kilpailu2.html">
+        <img class="photo1" src="../img/banneri.gif" alt="Banneri1">
+    </a>
+    <a href="tarina.html">
+        <img class="photo2" src="../img/kontanter_anim.gif" alt="Banneri2">
+    </a>
+</div>
+<div class="class">
+    <h1 id="test_status"></h1>
+</div>
+<div id="test" class="quizmargin"></div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/skel.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+
+
+</html>

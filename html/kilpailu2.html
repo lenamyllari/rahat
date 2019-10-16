@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Äänestä paras video ja osallistu kilpailuun</title>
+    <style>
+        .hidden{
+            display:none;
+        }
+        .visible{
+            display: unset;
+        }
+        #rahat{
+            width: 70%;
+        }
+        span {
+            color: #3d3d3d;
+        }
+        span:hover {
+            color: #3d3d3d;
+        }
+        .active {
+            background-color: #486e37;
+        }
+    </style>
+    <script>
+        function visibility() {
+            var x = document.getElementById('myDIV');
+            if (x.style.visibility === 'visible') {
+                x.style.visibility = 'visible';
+            } else {
+                x.style.visibility = 'visible';
+            }
+        }
+        $(document).ready(function(){
+            $('body div input').click(function(){
+                $('div input').removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<header id="header">
+    <a href="index.html" class="logo"><span class="blinking" style="color: red">Rakkaudesta</span> rahaan</a>
+    <nav id="nav">
+        <a href="tietovisa.html">Tietovisa</a>
+        <a href="kilpailu2.html">Videokilpailu</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="kartta.html">Kassapalvelukartta</a>
+        <a href="apiapi.html">Valuuttamuunnin</a>
+        <a href="tekijat.html">Tekijät</a>
+        <a href="tarina.html">Tarina</a>
+    </nav>
+</header>
+<a href="#menu" class="navPanelToggle"><span style="color: #85bb65" class="fa fa-2x fa-bars"></span></a>
+<div style="text-align: center">
+    <h1>Äänestä paras video ja osallistu arvontaan</h1>
+    <h3>Valitsemasi video avautuu klikkaamalla videoita alapuolelta</h3>
+    <div>
+        <input class="button" type="button" id="video1" name="button" value="Katso 1. video" onclick="naytaVideo(1); visibility()">
+        <input class="button" type="button" id="video2" name="button" value="Katso 2. video" onclick="naytaVideo(2); visibility()">
+        <input class="button" type="button" id="video3" name="button" value="Katso 3.video" onclick="naytaVideo(3); visibility()">
+    </div>
+    <br>
+    <div id="videoKlippi" class="hidden"><video id="video" controls></video>
+    </div>
+    <br>
+    <div style="visibility: hidden" id="myDIV">
+        <p>Valitse paras video ja äänestä!</p>
+        <label for="eka">eka video</label><input type="radio" id="eka" name="video" value="1"><br>
+        <label for="toka">toka video</label><input type="radio" id="toka" name="video" value="2"><br>
+        <label for="kolmas">kolmas video</label><input type="radio" id="kolmas" name="video" value="3"><br>
+        <br>
+        <input class="button" type="button" id="nappi" name="button" value="Äänestä">
+    </div>
+    <ul class="hidden" id="results" style="list-style-type: none">
+    </ul>
+</div>
+<div class="banners">
+    <a href ="tekijat.html">
+        <img class="photo1" src="../img/banneriTekijat.gif" alt="Banneri1">
+    </a>
+    <a href="tarina.html">
+        <img class="photo2" src="../img/kontanter_anim.gif" alt="Banneri2">
+    </a>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/skel.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/kilpailu3.js"></script>
+</body>
+</html>

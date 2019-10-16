@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Äänestä paras video ja osallistu kilpailuun</title>
+    <style>
+        #nappi{
+            cursor: url("../img/pound.png"), auto;
+        }
+        .hidden{
+            display:none;
+        }
+        .visible{
+            display: unset;
+        }
+        #rahat{
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<header id="header">
+    <a href="main.html" class="logo">Rakkaudesta rahaan</a>
+    <nav id="nav">
+        <a href="tietovisa.html">Tietovisa</a>
+        <a href="kilpailu2.html">Videokilpailu</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="kartta.html">Kartta</a>
+        <a href="apiapi.html">Valuuttamuunnin</a>
+        <a href="tekijat.html">Tekijät</a>
+        <a href="tarina.html">Tarina</a>
+    </nav>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-2x fa-bars"></span></a>
+<div class="content">
+<input type="button" id="video1" name="button" value="Katso 1.video" onclick="naytaVideo(1)">
+<input type="button" id="video2" name="button" value="Katso 2. video" onclick="naytaVideo(2)">
+<input type="button" id="video3" name="button" value="Katso 3.video" onclick="naytaVideo(3)">
+<br>
+    <div id="videoKlippi" class="hidden"><video id="video" controls></video></div>
+
+
+
+<h2>Äänestä paras video</h2>
+
+<form>
+    <label for="eka">eka video</label><input type="radio" id="eka" name="video" value="1"><br>
+    <label for="toka">toka video</label><input type="radio" id="toka" name="video" value="2"><br>
+    <label for="kolmas">kolmas video</label><input type="radio" id="kolmas" name="video" value="3"><br>
+    <input type="button" id="nappi" name="button" value="äänestä">
+</form>
+<ul class="hidden" id="results" style="list-style-type: none">
+
+</ul>
+</div>
+<div class="banners">
+    <a href ="tekijat.html">
+        <img class="photo1" src="../img/banneriTekijat.gif" alt="Banneri1">
+    </a>
+    <a href="tarina.html">
+        <img class="photo2" src="../img/kontanter_anim.gif" alt="Banneri2">
+    </a>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/skel.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/kilpailu3.js"></script>
+</body>
+
+</html>

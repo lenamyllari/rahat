@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Valuuttamuunnin ja säätiedot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        a:hover {
+            color: #486e37;
+        }
+        html{
+            cursor: url(../img/dollar.png), default
+        }
+    </style>
+</head>
+
+<body>
+<header id="header">
+    <a href="index.html" class="logo"><span class="blinking" style="color: red">Rakkaudesta</span> rahaan</a>
+    <nav id="nav">
+        <a href="tietovisa.html">Tietovisa</a>
+        <a href="kilpailu2.html">Videokilpailu</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="kartta.html">Kassapalvelukartta</a>
+        <a href="apiapi.html">Valuuttamuunnin</a>
+        <a href="tekijat.html">Tekijät</a>
+        <a href="tarina.html">Tarina</a>
+    </nav>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-2x fa-bars"></span></a>
+<h1>Valuuttalaskuri</h1>
+<h3>Valuuttalaskurilla lasket kuinka paljon eurot ovat muissa valuutoissa</h3>
+<div style="text-align: center">
+    <p>Kirjoita rahamäärä euromääräisenä hakukenttään, valitse valuutta listasta ja hae!</p>
+    <input class="exchange" id="maara" type="number" placeholder="Syötä euroina">
+
+    <select id="valuutta">
+        <option>USD</option>
+        <option>GBP</option>
+        <option>AUD</option>
+        <option>CAD</option>
+        <option>PLN</option>
+        <option>MXN</option>
+    </select>
+</div>
+<div style="text-align: center">
+    <a class="fa fa-5x fa-search"  id="hakunappi"></a>
+    <p id="tulos"></p>
+    <audio style="display: none" src="../audio/cashreg.wav" id="sound"></audio>
+    <p id="lampotila"></p>
+</div>
+
+<div class="banners">
+    <a href ="kilpailu2.html">
+        <img class="photo1" src="../img/banneri.gif" alt="Banneri1">
+    </a>
+    <a href="tarina.html">
+        <img class="photo2" src="../img/kontanter_anim.gif" alt="Banneri2">
+    </a>
+</div>
+<script src="../js/apiapi.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/skel.min.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

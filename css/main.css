@@ -1,0 +1,255 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
+
+body {
+	font-family: "Lato", sans-serif;
+	font-size: 90%;
+	font-weight: 300;
+	line-height: 2;
+	background-color: rgb(133, 187, 101);
+	margin-top: 7%;
+	margin-left: 27%;
+	color: #3d3d3d;
+}
+h1 {
+	margin-top: 3.5em;
+	text-align: center;
+}
+h2 {
+	margin-top: 3.5em;
+	text-align: center;
+}
+h3 {
+	text-align: center;
+}
+p {
+	text-align: center;
+}
+
+#header {
+	background: #1c1c1c;
+	color: #d5d5d5;
+	cursor: default;
+	height: 4.9em;
+	left: 0;
+	line-height: 5em;
+	position: fixed;
+	text-align: right;
+	top: 0;
+	width: 100%;
+	z-index: 10001;
+	padding-bottom: 5px;
+}
+
+
+#header .logo {
+	font-family: 'Pacifico', cursive;
+	left: 3%;
+	position: absolute;
+	color: #85bb65;
+	font-size: 200%;
+	text-transform: none;
+	text-decoration: none;
+}
+
+#header .logo:hover {
+	color: #486e37;
+
+}
+
+#nav {
+	display: none;
+}
+
+.navPanelToggle {
+	color: #85bb65;
+	position: fixed;
+	text-decoration: none;
+	height: 4em;
+	right: 3%;
+	top: 1.5em;
+	width: 2em;
+	display: block;
+	z-index: 10002;
+}
+
+
+#navPanel {
+	-moz-transform: translatex(20em);
+	-webkit-transform: translatex(20em);
+	-ms-transform: translatex(20em);
+	transform: translatex(20em);
+	-moz-transition: -moz-transform 1.5s ease-in-out, visibility 1.5s ease-in-out;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out, visibility 1.5s ease-in-out;
+	transition: transform 1.5s ease-in-out, visibility 1.5s ease-in-out;
+	-webkit-overflow-scrolling: touch;
+	visibility: hidden;
+	overflow-y: auto;
+	position: fixed;
+	right: 0;
+	top: 4.9em;
+	background: #1c1c1c;
+	height: auto;
+	max-width: 80%;
+	width: auto;
+	padding: 1.5em;
+	text-transform: uppercase;
+	z-index: 10003;
+	display: none;
+
+}
+
+#navPanel.visible {
+	-moz-transform: translatex(0);
+	-webkit-transform: translatex(0);
+	-ms-transform: translatex(0);
+	transform: translatex(0);
+	box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
+	visibility: visible;
+}
+
+#navPanel a:not(.close) {
+	border-top: solid 1px rgb(255, 255, 255);
+	color: #fff;
+	font-weight: 700;
+	display: block;
+	padding: 0.75em 0;
+	text-decoration: none;
+}
+#navPanel a:hover {
+	color: #486e37;
+}
+
+
+#navPanel a:not(.close):first-child {
+	border: none;
+}
+
+#navPanel .close {
+	text-decoration: none;
+	-moz-transition: color 1.5s ease-in-out;
+	-webkit-transition: color 1.5s ease-in-out;
+	transition: color 1.5s ease-in-out;
+	-webkit-tap-highlight-color: transparent;
+	border: 0;
+	color: #484848;
+	cursor: pointer;
+	display: block;
+	height: 6em;
+	padding-right: 1.25em;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	top: 0;
+	vertical-align: middle;
+	width: 5em;
+}
+
+#navPanel {
+	display: block;
+}
+
+.photo1 {
+	width: 90%;
+	border-radius: 10%;
+	margin-top: 4em;
+	margin-left: 5%;
+}
+.photo2 {
+	width: 90%;
+	border-radius: 10%;
+	margin-top: 2%;
+	margin-left: 5%;
+}
+.banners {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin-top: 400px;
+	background: rgba(28, 28, 28, 0.4);
+	color: #f1f1f1;
+	width: 25%;
+	height: 95%;
+
+}
+.content {
+	position: absolute;
+	bottom: 0;
+	left: 25%;
+	top: 16%;
+	background-color: rgba(255, 255, 255, 0);
+	color: #ffffff;
+	width: 75%;
+	height: 84%;
+}
+.block {
+	position: fixed;
+	bottom: 0;
+	left: 24.7%;
+	top: 0;
+	background-color: rgb(0, 0, 0);
+	color: #ffffff;
+	width: 5px;
+	height: 100%;
+	border-radius: 0;
+}
+#mainVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+.quizmargin {
+	margin-right: auto;
+	margin-left: auto;
+}
+.galleryphotos {
+	width:20%;
+	border-radius: 20%;
+	border-color: #ffffff;
+	border-style: solid;
+	border-width: thick;
+	margin-right: 15px;
+	margin-top: 10px;
+
+}
+.designerphotos {
+	width: 50%;
+	height: 50%;
+	border-color: #ffffff;
+	border-style: solid;
+	border-width: thick;
+}
+.map {
+	border-color: #ffffff;
+	border-style: solid;
+	border-width: thick;
+}
+.button {
+	background-color: #85bb65;
+	padding: 15px 32px;
+	border: none;
+}
+.button:hover {
+	background-color: #486e37;
+}
+label:hover {
+	font-weight: bold;
+}
+span {
+	color: #85bb65;
+}
+span:hover {
+	color: #486e37;
+}
+.blinking{
+	animation:blinkingText 4s infinite;
+}
+@keyframes blinkingText{
+	0%{     color: red;    }
+	49%{    color: #85bb65; }
+	50%{    color: #85bb65; }
+	80%{    color: #85bb65;  }
+	99%{   color: red;    }
+}
