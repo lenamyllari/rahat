@@ -14,3 +14,4 @@ Our website consists of several pages:
 - about us,
 - a quezz about currencies,
 - a short story about the idea.
+Unfortunaly the video files are too big, if you want to see them: http://users.metropolia.fi/~elenamy/rahat/video/
